@@ -11,8 +11,12 @@
     {%- else %}
     <meta name="description" content="{{ site.description }}">
     {%- endif %}
+    
+     {% block css %}
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="icon" type="image/webp" href="favicon.webp">
+    {% endblock %}
+    
     <title>{% block title %}{% endblock %} | {{ site.description }}</title>
   </head>
 
