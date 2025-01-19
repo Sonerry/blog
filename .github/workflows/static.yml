@@ -1,0 +1,31 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Ana dalı belirtiyor, kendi dalını buraya yazabilirsin.
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Set up Python environment
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.12.7'  # Blag için uygun Python sürümünü seç
+
+    - name: Install Blag
+      run: pip install blag  # Blag'in yüklenmesi
+
+    - name: Build site
+      run: blag build  # Blag ile siteyi build et, burada doğru komutu kullandığından emin ol
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build  # Build edilen dosyaların bulunduğu dizin
