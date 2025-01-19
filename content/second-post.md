@@ -1,5 +1,5 @@
 Title: Second Post
-Description: ilk yazıyı yazdım bu muhteşem Aq.
+Description: ilk yazıyı yazdım bu muhteşem.
 Date: 2025-01-18 21:13
 Tags: test
 
