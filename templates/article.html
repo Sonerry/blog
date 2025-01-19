@@ -16,7 +16,7 @@
       {% for tag in tags|sort(case_sensitive=true) %}
         {%- if not loop.first and not loop.last %}, {% endif -%}
         {%- if loop.last and not loop.first %} and {% endif %}
-        <a href="/soner/tags/{{ tag }}.html">#{{ tag }}</a>
+        <a href="/tags/{{ tag }}.html">#{{ tag }}</a>
       {%- endfor %}
     {% endif %}
     </p>
