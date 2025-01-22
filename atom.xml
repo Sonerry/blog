@@ -1,5 +1,267 @@
 <?xml version="1.0" encoding="utf8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Soner Yıldırım</title><link href="https://sonerry.github.io/" rel="alternate"></link><link href="https://sonerry.github.io/atom.xml" rel="self"></link><id>https://sonerry.github.io/</id><updated>2025-01-18T21:13:00+00:00</updated><subtitle>Journey to the world of software</subtitle><entry><title>Second Post</title><link href="https://sonerry.github.io/second-post.html" rel="alternate"></link><published>2025-01-18T21:13:00+00:00</published><updated>2025-01-18T21:13:00+00:00</updated><author><name>Soner yıldırım</name></author><id>tag:sonerry.github.io,2025-01-18:/second-post.html</id><summary type="html">ilk yazıyı yazdım bu muhteşem.</summary><content type="html">&lt;p&gt;This page serves no purpose :) anlatacak çok şeyim var bekleyin oglum.&lt;/p&gt;</content></entry><entry><title>Hello World!</title><link href="https://sonerry.github.io/hello-world.html" rel="alternate"></link><published>2023-01-01T12:00:00+00:00</published><updated>2023-01-01T12:00:00+00:00</updated><author><name>Soner yıldırım</name></author><id>tag:sonerry.github.io,2023-01-01:/hello-world.html</id><summary type="html">Hello there, this is the first blog post. You should read me first.</summary><content type="html">&lt;h2&gt;Hello World&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Soner Yıldırım</title><link href="https://sonerry.github.io/" rel="alternate"></link><link href="https://sonerry.github.io/atom.xml" rel="self"></link><id>https://sonerry.github.io/</id><updated>2025-01-22T20:00:00+00:00</updated><subtitle>Journey to the world of software</subtitle><entry><title>Binary Search Algorithm</title><link href="https://sonerry.github.io/Binary-Search-Algorithm.html" rel="alternate"></link><published>2025-01-22T20:00:00+00:00</published><updated>2025-01-22T20:00:00+00:00</updated><author><name>Soner yıldırım</name></author><id>tag:sonerry.github.io,2025-01-22:/Binary-Search-Algorithm.html</id><summary type="html">The Secret to Effective and Fast Search</summary><content type="html">&lt;h3&gt;Binary Search Algorithm&lt;/h3&gt;
+&lt;p&gt;Hi! I&amp;rsquo;ll tell you binary search algorithm and show an example in today  &lt;/p&gt;
+&lt;h3&gt;İntroduction&lt;/h3&gt;
+&lt;p&gt;Algorithms are one of the cornerstones of software development, and the binary search algorithm is one of the most used algorithms thanks to its efficiency and fast performance.&lt;/p&gt;
+&lt;h3&gt;Binary Search and Git&lt;/h3&gt;
+&lt;p&gt;Git is a distributed version control system used to manage software projects. The binary search algorithm is used to help Git find errors in a commit history.&lt;/p&gt;
+&lt;p&gt;The git bisect command in Git works based on the binary search algorithm to find in which commit an error started.&lt;/p&gt;
+&lt;h2&gt;Popularity&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Binary Search&lt;/strong&gt; algorithm is one of the first algorithms that come to mind when it comes to search algorithm.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.redd.it/d0olgpdxogy91.jpg" alt="Sample Image" width="500"&gt;&lt;/p&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;The sample was taken from &lt;a href="https://github.com/abdullah/paradoks"&gt;this address&lt;/a&gt;, thank you Abdullah &lt;/p&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;script src="//unpkg.com/vue@2"&gt;&lt;/script&gt;
+  &lt;link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"&gt;
+  &lt;style id="extra-rule"&gt;
+.home div{
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  background-color: var(--dark-color);
+  background-size: 400% 400%;
+  color: var(--light-color);
+  --dark-color: #0d1120;
+  --light-color: #ceec4c;
+  --border-radius: 20px;
+}
+nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  width: 100%;
+  background-color: var(--dark-color);
+  padding: 10px;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--light-color);
+}
+nav p {
+  flex: 1;
+}
+nav p small {
+  display: flex;
+  align-items: center;
+}
+nav input {
+  border: 0;
+  font-size: 23px;
+  text-align: center;
+  width: 100px;
+  border-bottom: 1px solid var(--light-color);
+  background-color: transparent;
+  color: var(--light-color);
+}
+nav button {
+  padding: 10px 20px;
+  border: 0;
+  margin: 0 10px;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.steps-indicator {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+.steps-indicator b {
+  font-size: 30px;
+  margin-right: 10px;
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+.card span {
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--light-color);
+  border-radius: var(--border-radius);
+  transition: all 1s;
+  margin: 10px;
+  font-size: 20px;
+}
+.result {
+  padding: 20px;
+  text-align: center;
+  animation: bounce-in 0.6s;
+  max-width: 300px;
+  margin: auto auto;
+}
+.result p {
+  margin: 0;
+  padding: 0;
+}
+.result h1 {
+  margin: 0 0 10px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--light-color);
+}
+.result a {
+  text-decoration: none;
+  margin: 15px;
+  color: var(--light-color);
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div class="home div"&gt;
+  &lt;div id="paradoks"&gt;
+    &lt;div v-show="step !== totalStep"&gt;
+      &lt;nav&gt;
+        &lt;p&gt;
+          Choose a number between 1 and
+          &lt;input v-model="maxSizeInput" type="text"&gt;
+          If you have a number on the screen press
+          &lt;button @click="yep"&gt;
+            Yep
+          &lt;/button&gt;
+          or
+          &lt;button @click="nope"&gt;
+            Nope
+          &lt;/button&gt;
+          &lt;small&gt;Press a number on your keyboard to highlight numbers which start with it.&lt;/small&gt;
+        &lt;/p&gt;
+&lt;div class="steps-indicator"&gt;
+          &lt;b&gt;{{ totalStep - step }}&lt;/b&gt; steps remaining
+        &lt;/div&gt;
+      &lt;/nav&gt;
+
+&lt;div class="card"&gt;
+        &lt;span v-for="p in currentCard" :key="p" :class="p.toString()"&gt;{{ p }}&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div v-if="step === totalStep" class="result"&gt;
+      &lt;h1&gt;{{ resultText }}&lt;/h1&gt;
+      &lt;a href="" @click.prevent="reset"&gt;Try again&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+  &lt;script&gt;new Vue({
+  el: '#paradoks',
+  data() {
+    return {
+      step: 0,
+      result: 0,
+      maxSize: 2048,
+      maxSizeInput: 2048
+    };
+  },
+  computed: {
+    totalStep() {
+      return Math.ceil(Math.log2(this.maxSize));
+    },
+    paradoks() {
+      const paradoks = [];
+      let loop = true;
+      let grupSize = 1;
+      let cardSize = 0;
+      let next = false;
+      let maxLimit = 0;
+
+      while (loop) {
+        paradoks[cardSize] = [];
+
+        for (let i = grupSize; i &lt;= this.maxSize; i++) {
+          if (i % grupSize == 0) {
+            next = !next;
+          }
+
+          if (next) {
+            paradoks[cardSize].push(i);
+          }
+        }
+
+        cardSize++;
+        grupSize *= 2;
+        next = false;
+        if (cardSize == this.totalStep) {
+          loop = false;
+        }
+      }
+
+      return paradoks;
+    },
+    currentCard() {
+      return this.paradoks[this.step];
+    },
+    resultText() {
+      if (this.result &gt; 0 &amp;&amp; this.result) {
+        return `😎😎 ${this.result} 😎😎`;
+      }
+      return `Whoops! '${this.result}' is found.`;
+
+    }
+  },
+  watch: {
+    maxSizeInput(value) {
+      if (value &gt; 3) {
+
+        if (value &gt; 5000) {
+          const res = confirm('Are you sure you want to render more than 5000?');
+          if (!res) {
+            return;
+          }
+        }
+
+        this.maxSize = value;
+        this.reset();
+      }
+    }
+  },
+  mounted() {
+    const extraRuleTag = document.querySelector('#extra-rule');
+    document.addEventListener('keydown', (e) =&gt; {
+      if (Number.isSafeInteger(parseInt(e.key))) {
+        extraRuleTag.innerHTML = `[class^="${e.key}"] { background-color: red }`
+      }
+    })
+  },
+  methods: {
+    yep() {
+      this.result += this.paradoks[this.step][0];
+      this.step++;
+    },
+    nope() {
+      this.step++;
+    },
+    reset() {
+      this.step = 0;
+      this.result = 0;
+    }
+  }
+});&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</content></entry><entry><title>Hello World!</title><link href="https://sonerry.github.io/hello-world.html" rel="alternate"></link><published>2023-01-01T12:00:00+00:00</published><updated>2023-01-01T12:00:00+00:00</updated><author><name>Soner yıldırım</name></author><id>tag:sonerry.github.io,2023-01-01:/hello-world.html</id><summary type="html">Hello there, this is the first blog post. You should read me first.</summary><content type="html">&lt;h2&gt;Hello World&lt;/h2&gt;
 &lt;p&gt;This is an example blog post. Internally, blag differentiates between &lt;strong&gt;pages&lt;/strong&gt;
 and &lt;strong&gt;articles&lt;/strong&gt;. Intuitively, pages are simple pages and articles are blog
 posts. The decision whether a document is a page or an article is made
